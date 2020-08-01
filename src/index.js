@@ -5,6 +5,7 @@ import App from './components/App/App';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
+import * as serviceWorker from './serviceWorker';
 
 const pizzaList = (state = [], action) => {
 	if (action.type === 'PIZZA_LIST') {
