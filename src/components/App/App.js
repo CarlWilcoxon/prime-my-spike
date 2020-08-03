@@ -44,7 +44,7 @@ class App extends Component {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          {this.state.arrayOfWords.map((word, index) => <span key={index}>{word + ' '}</span>)}
+          {this.props.reduxState.output.map((word, index) => <span key={index}>{word + ' '}</span>)}
         </p>
         <form onSubmit={this.submitHandler}>
           <TextField

@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 // import customerInfo from './customerInfoReducer';
 import standingMode from './standingModeReducer';
+import output from './outputReducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -11,6 +12,7 @@ import standingMode from './standingModeReducer';
 const rootReducer = combineReducers({
   // customerInfo,
   standingMode,
+  output,
 });
 
 export default rootReducer;
