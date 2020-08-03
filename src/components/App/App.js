@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from '../../logo.svg';
 import './App.css';
 import { TextField, InputAdornment} from '@material-ui/core';
+import { connect } from 'react-redux';
 
 class App extends Component {
 
@@ -25,7 +26,17 @@ class App extends Component {
       arrayOfWords,
       currentInput: '',
     })
-  }
+    if (this.state.arrayOfWords.length > 1) {
+      this.props.dispatch({
+        type: arrayOfWords[0],
+        payload: arrayOfWords,
+      });
+    } else {
+      this.props.dispatch({
+        type: arrayOfWords[0]
+      })
+    }
+}
 
   render () {
   return(
@@ -53,5 +64,8 @@ class App extends Component {
     </div>
   )};
 }
+const mapStateToProps = reduxState => ({
+  reduxState,
+});
 
-export default App;
+export default connect(mapStateToProps)(App);
